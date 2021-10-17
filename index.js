@@ -137,8 +137,23 @@ function writeToFile(fileName, data) {
     });
 };
 
+const createReadMe = util.promisify(writeToFile);
+
 // TODO: Create a function to initialize app
-function init() {}
+async function init() {
+    try {
+        //prompt inquirer questions
+        const userResponses = await inquirer.prompt(questions);
+        console.log('Thank you!: The current data is being generated into your README.me: ', userResponses);
+
+        const markdown = generateMarkdown(userResponses);
+        console.log(markdown);
+
+        await createReadMe('ExampleREADME', markdown);
+    } catch (err) {
+        console.log(err);
+    }
+};
 
 // Function call to initialize app
 init();
