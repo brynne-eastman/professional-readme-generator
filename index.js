@@ -2,6 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
+const util = require('util');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -52,6 +53,18 @@ const questions = [
                 return true;
             } else {
                 console.log('You need to enter a project description!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'What are the steps required to install your project?',
+        validate: installationInput => {
+            if (installationInput) {
+                return true;
+            } else {
                 return false;
             }
         }
@@ -115,7 +128,7 @@ const questions = [
         type: 'input',
         name: 'test',
         message: 'Please explain how users can test your application.',
-        when: ({ confirmtest }) => {
+        when: ({ confirmTest }) => {
             if (confirmTest) {
                 return true;
             } else {
@@ -144,7 +157,7 @@ async function init() {
     try {
         //prompt inquirer questions
         const userResponses = await inquirer.prompt(questions);
-        console.log('Thank you!: The current data is being generated into your README.me: ', userResponses);
+        console.log('Thank you! The current data is being generated into your README.me: ', userResponses);
 
         const markdown = generateMarkdown(userResponses);
         console.log(markdown);
