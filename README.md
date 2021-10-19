@@ -1,7 +1,7 @@
 # Professional README.md Generator
 
 ## Description
-
+This is a command-line application that runs with Node.js that dynamically generates a README.md file based on questions answered by an end-user. Check out the ExampleREADME.md in this repo as an example.
 
 ## Table of Contents
   * [Installation](#installation)
@@ -9,23 +9,19 @@
   * [Usage](#usage)
   * [License](#license)
   * [Contributing](#contributing)
-  * [Tests](#tests)
   * [Questions](#questions)
 
 ## Installation
 
 
-## Languages
-JavaScript and Node.js were used.
-
 ## Usage
-
+![gif](./README-Demo.gif)
 
 ## License
 
 
 ## Contributing
-Original Source Code: [https://github.com/coding-boot-camp/potential-enigma](https://github.com/coding-boot-camp/potential-enigma)
+Original Source Code: [https://github.com/coding-boot-camp/potential-enigma](https://github.com/coding-boot-camp/potential-enigma);
 [How to create a Professional README](./readme-guide.md)
 
 ## Questions
